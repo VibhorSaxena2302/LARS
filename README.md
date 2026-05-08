@@ -6,6 +6,8 @@ baseline, uses that baseline to generate demonstrations, and compares multiple
 deep RL reward-shaping methods by plotting and ranking how quickly they reduce
 the number of steps needed to reach the goal.
 
+<img src="images/mountaincar_environment.png" alt="MountainCar environment" width="700">
+
 ## Methods Compared
 
 - `q_only`: tabular Q-learning baseline.
@@ -21,6 +23,7 @@ the number of steps needed to reach the goal.
 .
 ├── README.md
 ├── .gitignore
+├── images/                         # README figures and result screenshots
 └── test/
     ├── train_comparison_methods.py   # main training and visualization script
     ├── run_all.py                    # runs Q baseline plus all comparison methods
@@ -101,6 +104,10 @@ Valid methods are:
 lars, demo_static, brs, dpbrs, rnn, q_only
 ```
 
+Example LARS training curve:
+
+<img src="images/lars_training_v8.png" alt="LARS training rewards" width="700">
+
 ## Visualize A Trained Agent
 
 Visualize a trained deep method:
@@ -140,6 +147,10 @@ steps = -reward
 
 Lower curves are better.
 
+Example comparison plot:
+
+<img src="images/comparison_steps_v8.png" alt="Steps comparison across methods" width="700">
+
 ## Leaderboard
 
 Rank methods by convergence speed and area under the smoothed steps curve:
@@ -159,6 +170,10 @@ The leaderboard reports:
 - first episode where smoothed steps stay below each threshold,
 - AUC-style mean steps score over early training,
 - which reward files were used.
+
+Example leaderboard output:
+
+<img src="images/leaderboard.png" alt="Convergence leaderboard" width="700">
 
 ## Saved Outputs
 
